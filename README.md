@@ -10,16 +10,10 @@ using namespace std;
 #define col 20
 
 void cargar(int vec[col][fil],int m, int n);
-
 void mostrar (int vec[col][fil],int m, int n);
-
 int sumartodo(int vec[col][fil],int m, int n);
-
 void sumarfilas(int vec[col][fil],int m, int n);
-
-
 void sumarfilas2(int vec[col][fil],int m, int n,int v[]);
-
 int sumarts(int vec[col][fil],int m, int n);
 
 void main()
