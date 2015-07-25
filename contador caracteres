@@ -1,0 +1,36 @@
+
+// CUENTA EL NUMERO DE CARACTERES PEDIDO
+#include "stdio.h"
+#include "conio.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+int repetidos(string vec);
+
+
+
+void main()
+{string vec;
+int cont;
+cout<<"Ingrese palabra: ";
+getline(cin,vec);
+cont=repetidos(vec);
+cout<<endl<<"El caracter esta repetido "<<cont<<" veces";
+getch();
+}
+
+int repetidos(string vec)
+{	int i,n,c=0;
+	char x;
+	n = vec.length();
+	cout<<"Ingrese un caracter: "<<endl;
+	cin>> x;
+	for (i=0; i<n; i++)
+		{if (vec[i]==x)
+			{
+			c++;
+			}
+		}
+return (c);
+}
