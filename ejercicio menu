@@ -1,0 +1,111 @@
+
+#include <iostream>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+
+using namespace std;
+
+int sumar(int x, int y)
+    {int r;
+r=x+y;
+return(r);
+}
+
+int multiplicar(int a,int b)
+{int r=0,i;
+for(i=1;i<=b;i++)
+{r=r+a;
+}
+return(r);
+}
+
+int division(int a,int b)
+{int r=0,i;
+while (a>0)
+{a=a-b;
+r++;
+}
+return (r);
+
+    }
+int factorial(int a)
+{int i, fac=1;
+    for(i=1;i<=a;i++)
+    {fac=fac*i;
+    }
+return(fac);
+}
+
+void main()
+    {int a,b,r,s,d,c,opc,k;
+
+do{
+	do{ cout<<"\t MENU"<<endl<<endl;
+	cout<<"1: SUMA"<<endl;
+	cout<<"2: MULTIPLICACION"<<endl;
+	cout<<"3: DIVISION"<<endl;
+	cout<<"4: FACTORIAL"<<endl;
+	cout<<"5: SALIR"<<endl;
+	cin>>opc;
+}while(opc<1 || opc>5);
+
+	switch(opc)
+	{
+			case 1: 
+			do{cout<<"Introducir un numero: ";
+			cin>>a;
+			cout<<"Introducir otro numero: ";
+			cin>>b;
+			}while(a<=0 && b<=0);
+			s=sumar(a,b);
+			cout<<endl<<"la suma es -->>"<<s;
+			break;
+			
+
+		case 2:
+		do{cout<<"Introducir un numero: ";
+			cin>>a;
+			cout<<"Introducir otro numero: ";
+			cin>>b;
+			}while(b<=0 && a<=0);
+			r=multiplicar(a,b);
+			cout<<endl<<"la multiplicacion es -->>"<<r;
+			break;
+		
+
+		case 3:
+				cout<<"Introducir un numero: ";
+				cin>>a;
+				cout<<"Introducir otro numero: ";
+				cin>>b;
+				if(a%b==0)
+				{d=division(a,b);
+				 cout<<endl<<"La division es -->>: "<<d;
+				 }
+				 else
+				 {cout<<endl<<"No es divisible";
+				 }
+				break;
+			
+
+		case 4:
+				cout<<"Introducir un numero: ";
+				cin>>c;
+				c=factorial(c);
+				cout<<endl<<"el factorial es -->>: "<<c;
+
+				break;
+			
+
+		case 5:
+			getch();
+	}
+	cout<< "\n\n Desea continuar? ---> SI=1; NO=0 " ;
+		cin>> k;
+}while (k==1);
+
+getch();
+	}
+
