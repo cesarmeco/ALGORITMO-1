@@ -1,0 +1,34 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void cargar (int vec[], int n)
+{int i;
+for (i=0;i<n;i++)
+	{cout<< "introducir los elementos: ";
+		cin>> vec[i];
+	}
+}
+
+void mostrar (int vec[], int n)
+{int i;
+cout<< "\n\n El vector es ---> :\n";
+for(i=0;i<n;i++)
+	{cout<< vec[i]<< "  \n";
+	}
+}
+
+
+void main()
+	{int vec1[25],vec2[25],vec3[25],n1,n2,n3;
+	cout<<"Cuantos elementos para el primer vector? :";
+	cin>>n1;
+	cout<<"Cuantos elementos para el segundo vector? :";
+	cin>>n2;
+	cargar(vec1,n1);
+	mostrar(vec1,n1);
+
+	getch();
+	}
+
