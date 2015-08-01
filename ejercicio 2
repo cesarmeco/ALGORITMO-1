@@ -1,0 +1,44 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void serie(int n);
+
+void main()
+{int n;
+cout<<"ingrese cantidad numeros: ";
+cin>>n;
+serie(n);
+getch();
+}
+
+void serie(int n)
+{int a=1, sum=0, sum2,d,aux=0,i=0;
+while(i<n)
+	{if(sum>9)
+		{
+		sum2=sum;
+		while(sum2>0)
+			{d=sum2%10;
+			aux=aux+d;
+			sum2=sum2/10;
+			}
+	
+		sum=aux;
+		sum=sum+a;
+		a=sum;
+		aux=0;
+		cout<<a<<", ";
+
+		}
+	else
+		{
+		sum=sum+a;
+		a=sum;
+		cout<<a<<", ";
+		}
+i++;
+	}
+}
