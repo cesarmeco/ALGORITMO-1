@@ -1,0 +1,21 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#include <string>
+
+using namespace std;
+
+void main()
+{string cad1,cad2;
+cout<<"ingrese palabra: ";
+getline(cin,cad1);
+cout<<"ingrese buscar: ";
+getline(cin,cad2);
+cout<<cad1<<endl;
+cout<<cad1.find(cad2);
+
+
+	
+	getch();
+}
