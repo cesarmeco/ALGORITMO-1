@@ -1,0 +1,35 @@
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include <string>
+
+int repetidos(string vec);
+
+using namespace std;
+
+void main()
+{string vec;
+int cont;
+cout<<"Ingrese palabra: "<<endl;
+getline(cin,vec);
+cont=repetidos(vec);
+cout<<"el caracter esta repetido "<<cont<<" veces";
+getch();
+}
+
+int repetidos(string vec)
+{	int i,n,c=0;
+	char x;
+	n = vec.length();
+	cout<<"Ingrese un caracter: "<<endl;
+	cin>> x;
+	for (i=0; i<n; i++)
+		{if (vec[i]==x)
+			{
+			c++;
+			}
+		}
+return (c);
+}
+
