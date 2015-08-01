@@ -1,0 +1,54 @@
+#include <iostream>	
+#include <conio.h>
+using namespace std;
+
+struct Telemento
+{int smat[20][20];
+int fil;
+int col;
+};
+
+void cargar (Telemento mat[20][20], int n, int m)
+{int i,j,k,l;
+	for(i=0;i<n;i++)
+		{for(j=0;j<m;j++)
+			{cout<<"ingrese fil: ";
+			cin>>mat[i][j].fil;
+			cout<<"ingrese col: ";
+			cin>>mat[i][j].col;
+			for(k=0;k<mat[i][j].fil;k++)
+				{for(l=0;l<mat[i][j].col;l++)
+					{cout<<"elemento: ";
+					cin>>mat[i][j].smat[k][l];
+					}
+				}
+			}
+	}
+}
+
+void mostrar(Telemento mat[20][20], int n, int m)
+{int i,j,k,l;
+	for(i=0;i<n;i++)
+		{for(j=0;j<m;j++)
+			{for(k=0;k<mat[i][j].fil;k++)
+				{for(l=0;l<mat[i][j].col;l++)
+					{cout<<mat[i][j].smat[k][l]<<" ";
+					}
+	cout<<endl;
+				}
+	cout<<endl;
+			}
+	}
+}
+									
+void main()
+{ int n,m;
+Telemento mat[20][20];
+cout<<"ingrese FILAS: ";
+cin>>n;
+cout<<"ingrese COLUMNAS: ";
+cin>>m;
+cargar(mat,n,m);
+mostrar(mat,n,m);
+getch();
+}
