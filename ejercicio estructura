@@ -1,0 +1,89 @@
+#include <conio.h>
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+struct regAmigo
+{char nombre[25];
+int edad;
+};
+
+void cargar (regAmigo vec[], int n);
+void mostrar (regAmigo vec[], int n);
+int edadMayor (regAmigo vec[], int n);
+void personaMayor (regAmigo vec[], int n);
+void eliminarMayor (regAmigo vec[], int n);
+
+void main()
+{int nro;
+regAmigo vecAmi[20];
+cout<<"Cuantos Amigos?:";
+cin>> nro;
+cargar(vecAmi,nro);
+mostrar(vecAmi,nro);
+cout<<"\n La edad mayor es---->: "<<edadMayor(vecAmi,nro);
+cout<<"\n Los amigos con edad mayor son --->> \n";
+personaMayor(vecAmi,nro);
+cout<<"\n eliminando al mayor queda:\n";
+eliminarMayor(vecAmi,nro);
+mostrar(vecAmi,nro);
+getch();
+}
+
+void cargar (regAmigo vec[], int n)
+{int i;
+for(i=0;i<n;i++)
+	{cout<<endl<<"datos para Amigo nro:"<<i+1;
+		cout<<"\nNombre?:";
+	do{gets(vec[i].nombre);
+	}while (strlen(vec[i].nombre) ==0);
+	cout<<"Edad?:";
+	cin>> vec[i].edad;
+	}
+}
+
+void mostrar (regAmigo vec[], int n)
+{int i;
+cout<<"\n los amigos son ---->> : \n";
+for(i=0;i<n;i++)
+	{cout<<endl<<vec[i].nombre<<"  "<<vec[i].edad;
+	}
+}	
+
+int edadMayor (regAmigo vec[], int n)
+{int i, may=vec[0].edad;
+	for(i=0;i<n;i++)
+		{if(may< vec[i].edad)
+			{may= vec[i].edad;
+			}
+		}
+	return(may);
+}
+
+void personaMayor (regAmigo vec[], int n)
+{int i, may=edadMayor(vec,n);
+	for(i=0;i<n;i++)
+		{if(may == vec[i].edad)
+			{may= vec[i].edad;
+			cout<<"\n " <<vec[i].nombre<<" "<<vec[i].edad;
+			}
+		}	
+}
+
+void eliminarMayor (regAmigo vec[], int &n)
+{int i,ip, may=edadMayor (vec,n);
+for(i=0;i<n;i++)
+	{if(may==vec[i].edad)
+		{ip=i;
+			while(ip<n-1)
+			{vec[ip].edad=vec[ip+1].edad;
+			ip++;
+			}
+			n--;
+			i--;
+		}
+	}	
+}
+
+
