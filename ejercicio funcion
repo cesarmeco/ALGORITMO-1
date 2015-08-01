@@ -1,0 +1,86 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+
+int cant(int x);
+int suma(int x);
+int sumaimpares(int x);
+int invertido(int x);
+int eliminarpares(int x);
+
+void main()
+{int x,c,s,si,inv,ep;
+do
+{cout << "Ingrese un numero natural: ";
+cin >> x;
+}while (x<=0);
+c=cant(x);
+cout<< "Las cantidad de digitos que tiene es: "<<c<<endl;
+s=suma(x);
+cout<< "La suma de sus digitos  es: "<<s<<endl;
+si=sumaimpares(x);
+cout<< "La suma de sus digitos impares es: "<<si<<endl;
+inv=invertido(x);
+cout<< "El numero invertido del digito es: "<<inv<<endl;
+ep=eliminarpares(x);
+cout<< "Eliminando los digitos pares el numero es: "<<ep<<endl;
+getch();
+}
+
+int cant(int x)
+{int i,c=0;
+for(i=0;x>0;i++)
+{x=x/10;
+c++;
+}
+return(c);
+}
+
+int suma(int x)
+{int i,n,s=0;
+for(i=0;x>0;i++)
+{
+n=x%10;
+s=s+n;
+x=x/10;
+}
+return(s);
+}
+
+int sumaimpares(int x)
+{int i,s=0,n;
+for(i=0;x>0;i++)
+{n=x%10;
+if(n%2!=0)
+{s=s+n;
+}
+x=x/10;
+}
+return(s);
+}
+
+int invertido(int x)
+{
+int i,n,s=0;
+for(i=0;x>0;i++)
+{n=x%10;
+s=(s*10)+n;
+x=x/10;
+}
+return(s);
+}
+
+int eliminarpares(int x)
+{int i,n,s=0,m=1;
+for(i=0;x>0;i++)
+{n=x%10;
+	if(n%2!=0)
+	{s=s+n*m;
+	m=m*10;
+	}
+	x=x/10;
+	
+}
+return(s);
+}
